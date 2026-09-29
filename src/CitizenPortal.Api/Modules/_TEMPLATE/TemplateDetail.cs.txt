@@ -1,0 +1,23 @@
+// Rename this file to "{YourEntity}.cs" (remove .txt) after copying the folder.
+using System.ComponentModel.DataAnnotations;
+using CitizenPortal.Api.Models;
+
+namespace CitizenPortal.Api.Modules.Template; // <-- rename namespace segment to your dept, e.g. Modules.Prop
+
+/// <summary>
+/// Extra structured data for one Application, owned by this module. Always a
+/// 1:1 extension of the core Application row — never store citizen identity,
+/// status, or payment info here; that all stays on the shared Application.
+/// </summary>
+public class TemplateDetail
+{
+    public Guid Id { get; set; } = Guid.NewGuid();
+
+    /// <summary>FK to the shared Applications table — this is what links your module to the master workflow.</summary>
+    public Guid ApplicationId { get; set; }
+    public Application? Application { get; set; }
+
+    // ---- Add your module-specific fields below ----
+    [MaxLength(200)]
+    public string ExampleField { get; set; } = string.Empty;
+}

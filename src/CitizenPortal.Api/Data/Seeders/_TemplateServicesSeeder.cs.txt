@@ -1,0 +1,42 @@
+// =====================================================================================
+// COPY THIS FILE to start a new department's service catalog.
+// 1. Rename it to "{YourDeptCode}ServicesSeeder.cs" (remove the .txt extension)
+// 2. Rename the class and set DepartmentCode to your department's Code
+//    (must exactly match a Department.Code already seeded in DbSeeder.cs — see the
+//    department list there for all available codes, e.g. WTD, LIC, EDU, HLT, etc.)
+// 3. Fill GetServices() with your service(s), fields and required documents.
+// 4. That's it — no other file needs to change. DbSeeder finds this automatically.
+//
+// FieldType options: Text, Number, Date, Select, Textarea, Email, Tel
+//   - For Select, set Options to a comma-separated string, e.g. "Option A,Option B"
+// =====================================================================================
+
+using CitizenPortal.Api.Models;
+
+namespace CitizenPortal.Api.Data.Seeders;
+
+public class TemplateServicesSeeder : IServiceCatalogSeeder
+{
+    public string DepartmentCode => "XXX"; // <-- change to your department code
+
+    public List<Service> GetServices() => new()
+    {
+        new Service
+        {
+            Name = "Sample Service Name",
+            Description = "One-line description shown on the service card.",
+            Fee = 0,               // in Rs.
+            ProcessingDays = 7,
+            RequiredDocuments = new List<ServiceDocument>
+            {
+                new() { DocumentName = "Aadhaar Card" },
+            },
+            Fields = new List<ServiceField>
+            {
+                new() { Label = "Applicant Name", FieldType = FieldType.Text, Required = true, DisplayOrder = 1 },
+                new() { Label = "Date", FieldType = FieldType.Date, Required = true, DisplayOrder = 2 },
+                new() { Label = "Category", FieldType = FieldType.Select, Required = true, DisplayOrder = 3, Options = "Type A,Type B" },
+            }
+        },
+    };
+}

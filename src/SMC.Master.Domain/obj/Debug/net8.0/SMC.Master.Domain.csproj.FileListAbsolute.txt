@@ -1,0 +1,11 @@
+C:\Users\HP\Downloads\SMC-MASTER-PORTAL-integrated\SMC-MASTER-PORTAL\backend\src\SMC.Master.Domain\bin\Debug\net8.0\SMC.Master.Domain.deps.json
+C:\Users\HP\Downloads\SMC-MASTER-PORTAL-integrated\SMC-MASTER-PORTAL\backend\src\SMC.Master.Domain\bin\Debug\net8.0\SMC.Master.Domain.dll
+C:\Users\HP\Downloads\SMC-MASTER-PORTAL-integrated\SMC-MASTER-PORTAL\backend\src\SMC.Master.Domain\bin\Debug\net8.0\SMC.Master.Domain.pdb
+C:\Users\HP\Downloads\SMC-MASTER-PORTAL-integrated\SMC-MASTER-PORTAL\backend\src\SMC.Master.Domain\obj\Debug\net8.0\SMC.Master.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\Downloads\SMC-MASTER-PORTAL-integrated\SMC-MASTER-PORTAL\backend\src\SMC.Master.Domain\obj\Debug\net8.0\SMC.Master.Domain.AssemblyInfoInputs.cache
+C:\Users\HP\Downloads\SMC-MASTER-PORTAL-integrated\SMC-MASTER-PORTAL\backend\src\SMC.Master.Domain\obj\Debug\net8.0\SMC.Master.Domain.AssemblyInfo.cs
+C:\Users\HP\Downloads\SMC-MASTER-PORTAL-integrated\SMC-MASTER-PORTAL\backend\src\SMC.Master.Domain\obj\Debug\net8.0\SMC.Master.Domain.csproj.CoreCompileInputs.cache
+C:\Users\HP\Downloads\SMC-MASTER-PORTAL-integrated\SMC-MASTER-PORTAL\backend\src\SMC.Master.Domain\obj\Debug\net8.0\SMC.Master.Domain.dll
+C:\Users\HP\Downloads\SMC-MASTER-PORTAL-integrated\SMC-MASTER-PORTAL\backend\src\SMC.Master.Domain\obj\Debug\net8.0\refint\SMC.Master.Domain.dll
+C:\Users\HP\Downloads\SMC-MASTER-PORTAL-integrated\SMC-MASTER-PORTAL\backend\src\SMC.Master.Domain\obj\Debug\net8.0\SMC.Master.Domain.pdb
+C:\Users\HP\Downloads\SMC-MASTER-PORTAL-integrated\SMC-MASTER-PORTAL\backend\src\SMC.Master.Domain\obj\Debug\net8.0\ref\SMC.Master.Domain.dll

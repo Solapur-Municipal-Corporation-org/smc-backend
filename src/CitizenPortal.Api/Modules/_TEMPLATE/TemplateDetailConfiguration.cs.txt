@@ -1,0 +1,22 @@
+// Rename this file to "{YourEntity}Configuration.cs" (remove .txt) after copying the folder.
+using CitizenPortal.Api.Models;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+
+namespace CitizenPortal.Api.Modules.Template; // <-- rename to match your entity's namespace
+
+public class TemplateDetailConfiguration : IEntityTypeConfiguration<TemplateDetail>
+{
+    public void Configure(EntityTypeBuilder<TemplateDetail> e)
+    {
+        // ALWAYS prefix the table name with your department code so table names
+        // never collide with another department's module in the shared DB.
+        e.ToTable("TEMPLATE_Details"); // <-- e.g. "PROP_AssessmentDetails"
+
+        e.Property(x => x.Id).ValueGeneratedNever();
+        e.HasOne(x => x.Application)
+            .WithMany()
+            .HasForeignKey(x => x.ApplicationId)
+            .OnDelete(DeleteBehavior.Cascade);
+    }
+}

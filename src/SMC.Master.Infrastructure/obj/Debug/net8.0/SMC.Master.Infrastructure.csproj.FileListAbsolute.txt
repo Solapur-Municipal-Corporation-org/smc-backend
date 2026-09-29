@@ -1,0 +1,5 @@
+C:\Users\HP\Downloads\SMC-MASTER-PORTAL-integrated\SMC-MASTER-PORTAL\backend\src\SMC.Master.Infrastructure\obj\Debug\net8.0\SMC.Master.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\HP\Downloads\SMC-MASTER-PORTAL-integrated\SMC-MASTER-PORTAL\backend\src\SMC.Master.Infrastructure\obj\Debug\net8.0\SMC.Master.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HP\Downloads\SMC-MASTER-PORTAL-integrated\SMC-MASTER-PORTAL\backend\src\SMC.Master.Infrastructure\obj\Debug\net8.0\SMC.Master.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\HP\Downloads\SMC-MASTER-PORTAL-integrated\SMC-MASTER-PORTAL\backend\src\SMC.Master.Infrastructure\obj\Debug\net8.0\SMC.Master.Infrastructure.AssemblyInfo.cs
+C:\Users\HP\Downloads\SMC-MASTER-PORTAL-integrated\SMC-MASTER-PORTAL\backend\src\SMC.Master.Infrastructure\obj\Debug\net8.0\SMC.Master.Infrastructure.csproj.CoreCompileInputs.cache
