@@ -1,4 +1,6 @@
 using System.Text;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
@@ -69,12 +71,46 @@ builder.Services.AddCors(options =>
 
 // ---------- JWT Authentication ----------
 var jwtSection = builder.Configuration.GetSection("Jwt");
+var allowedBhoomiRoles = new HashSet<string>(["Admin", "Officer", "Staff", "JE", "OS", "AssistantCommissioner"], StringComparer.OrdinalIgnoreCase);
+var departmentRoleMappings = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+foreach (var mapping in builder.Configuration.GetSection("BhoomiAuth:DepartmentRoleMappings").GetChildren())
+    if (!string.IsNullOrWhiteSpace(mapping.Key) && !string.IsNullOrWhiteSpace(mapping.Value))
+        departmentRoleMappings[mapping.Key] = mapping.Value;
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
     options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
 }).AddJwtBearer(options =>
 {
+    options.Events = new JwtBearerEvents
+    {
+        OnTokenValidated = context =>
+        {
+            if (context.Principal?.Identity is ClaimsIdentity identity)
+            {
+                var roleClaim = identity.FindFirst(ClaimTypes.Role) ?? identity.FindFirst("role");
+                if (roleClaim?.Value is "SystemAdmin" or "DepartmentAdmin" or "DepartmentEmployee")
+                {
+                    var subject = identity.FindFirst(ClaimTypes.NameIdentifier)?.Value
+                        ?? identity.FindFirst(JwtRegisteredClaimNames.Sub)?.Value;
+                    var mappedRole = subject is not null && departmentRoleMappings.TryGetValue(subject, out var configuredRole)
+                        && allowedBhoomiRoles.Contains(configuredRole)
+                            ? configuredRole
+                            : roleClaim.Value == "DepartmentEmployee" ? "Staff" : "Admin";
+                    identity.RemoveClaim(roleClaim);
+                    identity.AddClaim(new Claim(ClaimTypes.Role, mappedRole));
+                }
+                if (identity.FindFirst(ClaimTypes.Name) is null)
+                {
+                    var displayName = identity.FindFirst("fullName")?.Value
+                        ?? identity.FindFirst("mobileNumber")?.Value
+                        ?? identity.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                    if (!string.IsNullOrWhiteSpace(displayName)) identity.AddClaim(new Claim(ClaimTypes.Name, displayName));
+                }
+            }
+            return Task.CompletedTask;
+        }
+    };
     options.TokenValidationParameters = new TokenValidationParameters
     {
         ValidateIssuer = true,
