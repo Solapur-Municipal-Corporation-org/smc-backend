@@ -1,0 +1,13 @@
+bin/
+obj/
+UploadedFiles/
+*.user
+appsettings.Production.local.json
+secrets.json
+*.pfx
+
+appsettings.Development.json
+appsettings.Production.json
+appsettings.*.local.json
+!appsettings.example.json
+appsettings.json

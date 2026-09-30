@@ -1,0 +1,14 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/SMC.API/SMC.API.csproj" />
+    <Project Path="src/SMC.Application/SMC.Application.csproj" />
+    <Project Path="src/SMC.Domain/SMC.Domain.csproj" />
+    <Project Path="src/SMC.Infrastructure/SMC.Infrastructure.csproj" />
+    <Project Path="src/SMC.SharedKernel/SMC.SharedKernel.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/SMC.Application.UnitTests/SMC.Application.UnitTests.csproj" />
+    <Project Path="tests/SMC.ArchitectureTests/SMC.ArchitectureTests.csproj" />
+    <Project Path="tests/SMC.Domain.UnitTests/SMC.Domain.UnitTests.csproj" />
+  </Folder>
+</Solution>
