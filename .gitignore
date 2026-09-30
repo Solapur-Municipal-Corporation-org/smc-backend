@@ -1,0 +1,59 @@
+# .NET / Visual Studio
+**/bin/
+**/obj/
+.vs/
+*.user
+*.suo
+*.cache
+*.sln.docstates
+TestResults/
+
+# Local application configuration and credentials
+**/appsettings.json
+**/appsettings.*.json
+!**/appsettings.example.json
+**/.env
+**/.env.*
+!**/.env.example
+!**/.env.*.example
+*.secrets.json
+
+# Certificates and private keys
+*.pfx
+*.p12
+*.key
+*.pem
+*.crt
+*.cer
+
+# Node.js / Next.js
+**/node_modules/
+**/.next/
+**/out/
+**/coverage/
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# SQL Server and local database runtime files
+*.mdf
+*.ldf
+*.ndf
+*.bak
+*.trn
+*.db-shm
+*.db-wal
+
+# Docker local overrides
+**/docker-compose.override.yml
+**/.docker/
+**/docker-data/
+**/mssql-data/
+**/sqlserver-data/
+
+# Logs and generated validation output
+*.log
+**/.build-validation/
+
+# Documentation
+docs/
